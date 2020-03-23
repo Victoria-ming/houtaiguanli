@@ -62,12 +62,12 @@ export default {
         console.log(valid)
         if (!valid) return
         const { data: res } = await this.$http.post(
-          '/v2/login',
+          '/login',
           this.loginForm
         )
 
         console.log(res)
-        if (res.status === 1) {
+        if (res.meta.status === 200) {
           this.$message({
             type: 'success',
             message: '登录成功'
@@ -78,17 +78,8 @@ export default {
             type: 'error',
             message: res.message
           })
-          this.$router.push('home')
+          // this.$router.push('home')
         }
-        // if (res.meta.status !== 400) {
-        //   console.log('登陆成功')
-        //   this.$message.success('登陆成功')
-        //   //   window.sessionStorage.setItem('token', res.data.token)
-        //   this.$router.push('/home')
-        // } else {
-        //   console.log('登录失败')
-        //   this.$message.error('登录失败')
-        // }
       })
     }
   }

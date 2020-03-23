@@ -31,3 +31,8 @@ font-size: 12px;
   .ql-editor {
     min-height: 300px;
   }
+  .el-button--primary:hover {
+    color: #FFF;
+    background-color: green;
+    border-color: green;
+}

@@ -105,3 +105,17 @@ Mock.mock('https://elm.cangdu.org/menus', 'get', function () {
     }
   }
 })
+Mock.mock('https://elm.cangdu.org/login', 'post', function () {
+  return {
+    data: {
+      id: 'jd_4fd90e635963',
+      username: 'admin',
+      password: '1234567',
+      jd: 999
+    },
+    meta: {
+      status: 200,
+      msg: '创建成功'
+    }
+  }
+})
